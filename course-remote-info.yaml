@@ -1,0 +1,144 @@
+hyperskill_project:
+  id: 381
+  ide_files: https://cogniterra.org/media/attachments/lesson/32373/additional_files.json
+  is_template_based: false
+  use_ide: true
+update_date: "Mon, 02 Oct 2023 17:44:46 UTC"
+stages:
+  - id: 2269
+    step: 35140
+    is_completed: false
+  - id: 2270
+    step: 35141
+    is_completed: false
+  - id: 2271
+    step: 35142
+    is_completed: false
+  - id: 2272
+    step: 35143
+    is_completed: false
+  - id: 2273
+    step: 35144
+    is_completed: false
+  - id: 2274
+    step: 35145
+    is_completed: false
+topics:
+  0:
+    - title: Introduction to Python
+      theory_id: 5204
+    - title: Overview of the basic program
+      theory_id: 5208
+    - title: Multi-line programs
+      theory_id: 5233
+    - title: "PEP 8: Coding style conventions"
+      theory_id: 5879
+    - title: Comments
+      theory_id: 6081
+    - title: Taking input
+      theory_id: 5913
+    - title: Program execution
+      theory_id: 6047
+    - title: Errors
+      theory_id: 6052
+    - title: Basic data types
+      theory_id: 5852
+    - title: Quotes and multi-line strings
+      theory_id: 5814
+    - title: Variables
+      theory_id: 5859
+    - title: String formatting
+      theory_id: 6037
+  1:
+    - title: If statement
+      theory_id: 5953
+    - title: For loop
+      theory_id: 6065
+    - title: While loop
+      theory_id: 5940
+    - title: Loop control statements
+      theory_id: 6302
+    - title: Invoking a function
+      theory_id: 5891
+    - title: Boolean logic
+      theory_id: 6025
+    - title: List
+      theory_id: 5979
+    - title: Declaring a function
+      theory_id: 5900
+    - title: Comparisons
+      theory_id: 5920
+  2:
+    - title: Modulo division
+      theory_id: 10586
+    - title: Computer algorithms
+      theory_id: 16547
+    - title: "Big O: how to count it"
+      theory_id: 35901
+    - title: "Best, average and worst cases"
+      theory_id: 20084
+    - title: String basics
+      theory_id: 19445
+    - title: Pseudocode
+      theory_id: 15090
+    - title: Pseudocode basics
+      theory_id: 19510
+    - title: Complex constructions in pseudocode
+      theory_id: 20922
+    - title: "Hashing: overview"
+      theory_id: 9831
+    - title: Hash function
+      theory_id: 30143
+    - title: Cryptographic hash functions
+      theory_id: 30149
+    - title: String hashing
+      theory_id: 34019
+  3:
+    - title: HyperText Transfer Protocol
+      theory_id: 6569
+    - title: HTTP URL
+      theory_id: 6740
+    - title: HTTP messages
+      theory_id: 6752
+    - title: Installing packages with pip
+      theory_id: 6230
+    - title: Libraries
+      theory_id: 8504
+    - title: Frameworks
+      theory_id: 6701
+    - title: "Requests: retrieving data"
+      theory_id: 8603
+    - title: Introduction to API
+      theory_id: 17007
+    - title: Dictionary
+      theory_id: 6481
+  4:
+    - title: Load module
+      theory_id: 6019
+    - title: "Requests: manipulating data"
+      theory_id: 8681
+    - title: Indexes
+      theory_id: 6189
+    - title: Basic string methods
+      theory_id: 6842
+    - title: Search in a string
+      theory_id: 9558
+    - title: The string module
+      theory_id: 15332
+  5:
+    - title: Else statement
+      theory_id: 5932
+    - title: Exceptions
+      theory_id: 6042
+    - title: Built-in exceptions
+      theory_id: 11680
+    - title: Exception handling
+      theory_id: 6270
+    - title: Command line arguments
+      theory_id: 7981
+    - title: Testing user input
+      theory_id: 10494
+    - title: Type casting
+      theory_id: 6224
+    - title: Slicing
+      theory_id: 6177

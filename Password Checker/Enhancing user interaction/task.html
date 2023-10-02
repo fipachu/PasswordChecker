@@ -1,0 +1,30 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>Until now, the user has had to restart the program whenever they want to check a different password. That's not very convenient! In this stage, you'll modify the program to accept passwords from users until they wish to stop continuously. Additionally, you'll get a chance to understand the <code class="java">argsparse</code> module and command-line arguments in Python, adding more flexibility and control over the program's execution.</p>
+<p>This stage adds user-friendly polish and flexibility. It includes hashing, API requests, user interaction, and command-line control.</p>
+<h5 id="objectives">Objectives</h5>
+<p>Your program should accomplish the following in this stage:</p>
+<ol>
+<li>Continuously prompt the user to enter a password;</li>
+<li>Provide an option for the user to exit the program at any time;</li>
+<li>Allow the user to pass an optional command-line argument to specify whether they want to see the full hashed password in the output (for example, <code class="java">--show-hash</code>).</li>
+</ol>
+<p>The functionality (hashing the password, sending the request, processing the response) remains the same as in the previous stages.</p>
+<h5 id="examples">Examples</h5>
+<p>The greater-than symbol followed by a space (<code class="java">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+<p><em>Without command-line argument:</em></p>
+<pre><code class="language-no-highlight">Enter your password (or 'exit' to quit): &gt; mypassword123
+Checking...
+Your password has been pwned! This password appears 23123 times in data breaches.
+Enter your password (or 'exit' to quit): &gt; exit
+Goodbye!
+</code></pre>
+<p><em>With command-line argument <code class="java">--show-hash</code>:</em></p>
+<pre><code class="language-no-highlight">Enter your password (or 'exit' to quit): &gt; mypassword123
+Your hashed password is: 1cf4c502ddd89b918c4bfefea76dadd590693b48
+Checking...
+Your password has been pwned! This password appears 23123 times in data breaches.
+Enter your password (or 'exit' to quit): &gt; exit
+Goodbye!
+</code></pre>
+</div>

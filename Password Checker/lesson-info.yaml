@@ -1,0 +1,9 @@
+type: framework
+content:
+  - Basic input   output
+  - Local password strength check
+  - Hashing and understanding SHA1
+  - Introduction to API and requests
+  - Processing API Response
+  - Enhancing user interaction
+current_task: 0

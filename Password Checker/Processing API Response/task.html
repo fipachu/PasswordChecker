@@ -1,0 +1,30 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>Now that your program can send a request to the <em>Have I Been Pwned</em> API, it's time to process the response. The response will include a list of hashes that match the prefix in the request, along with a count of how many times each hash appears in the data breaches recorded by the API. In this stage, find the hash corresponding to the user's password in this list and display the count to the user.</p>
+<p>We'll add padding to our requests to further improve the program's privacy. Padding helps to conceal the size of the actual request. It involves sending additional, unnecessary, and accurate data to mask what is being sent. </p>
+<p>In our case, the <em>Have I Been Pwned</em> API supports padding by adding <code class="java">Add-Padding: true</code> to the request's header.</p>
+<p>Note: Padded entries always have a password count of 0 and can be discarded once received.</p>
+<h5 id="objectives">Objectives</h5>
+<p>In this stage, you should modify your program to accomplish the following:</p>
+<ol>
+<li>Prompt the user to enter their password;</li>
+<li>Hash the user's password using the SHA1 hashing algorithm;</li>
+<li>Send a request to the <em>Have I Been Pwned</em> API using the first five characters of the hashed password, and add padding to the request;</li>
+<li>Process the response from the API to find the complete hash in the list and retrieve the count;</li>
+<li>Display a message to the user indicating whether their password has been pwned, and how many times it appears in the data breaches.</li>
+</ol>
+<h5 id="examples">Examples</h5>
+<p>The greater-than symbol followed by a space (<code class="java">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code class="language-no-highlight">Enter your password: &gt; mypassword123
+Your hashed password is: 1cf4c502ddd89b918c4bfefea76dadd590693b48
+Checking...
+Your password has been pwned! The password "mypassword123" appears 23123 times in data breaches.
+</code></pre>
+<p><strong> Example 2:</strong></p>
+<pre><code class="language-no-highlight">Enter your password: &gt; anotherpassword456
+Your hashed password is: 4f275aab52e30f25e76124dc4aa9cc731ef256ae
+Checking...
+Good news! Your password hasn't been pwned.
+</code></pre>
+</div>

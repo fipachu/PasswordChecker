@@ -1,0 +1,22 @@
+<div class="step-text">
+<h5 id="description">Description</h5>
+<p>APIs, or Application Programming Interfaces, are powerful tools that allow different software applications to communicate with each other. By utilizing APIs, you can significantly expand the functionality of your programs by leveraging the capabilities of other applications or services. In this stage, you will begin interacting with APIs, specifically, the <em>Have I Been Pwned</em> API. This API will allow you to check whether a hashed password has appeared in a data breach.</p>
+<p>For more information, please refer to <a href="https://haveibeenpwned.com/API/v2#PwnedPasswords:~:text=with%20a%20CRLF.-,Searching%20by%20range,-In%20order%20to" rel="noopener noreferrer nofollow" target="_blank">haveibeenpwned.com</a>.</p>
+<p>By the end of this stage, your program will be able to interact with an API, which is a significant step towards the project's final goal.</p>
+<h5 id="objectives">Objectives</h5>
+<p>In this stage, you should modify your program to accomplish the following:</p>
+<ol>
+<li>Prompt the user to enter their password;</li>
+<li>Hash the user's password using the SHA1 hashing algorithm;</li>
+<li>Send a request to the <em>Have I Been Pwned</em> API using the first five characters of the hashed password;</li>
+<li>Print the sent URL indicating that the API request has been sent and the program is awaiting a response.</li>
+</ol>
+<h5 id="examples">Examples</h5>
+<p>The greater-than symbol followed by a space (<code class="java">&gt; </code>) represents the user input. Note that it's not part of the input.</p>
+<p><strong>Example 1:</strong></p>
+<pre><code class="language-no-highlight">Enter your password: &gt; mypassword123
+Your hashed password is: 1cf4c502ddd89b918c4bfefea76dadd590693b48
+Checking...
+A request was sent to "https://api.pwnedpasswords.com/range/1cf4c" endpoint, awaiting response...
+</code></pre>
+</div>
