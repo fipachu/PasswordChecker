@@ -1,10 +1,10 @@
-def valid_length(s, min_length) -> bool:
+def is_valid(s, min_length) -> bool:
     return len(s) >= min_length
 
 
 while True:
     password = input("Enter your password: ")
-    if valid_length(password, 8):
+    if is_valid(password, 8):
         print(f"You entered: {password}")
         break
     else:
