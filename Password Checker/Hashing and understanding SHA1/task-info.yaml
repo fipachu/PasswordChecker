@@ -53,5 +53,8 @@ files:
           StageTest3().run_tests()
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/35142#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Mon, 09 Oct 2023 19:45:10 UTC"
 record: -1

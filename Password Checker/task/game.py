@@ -1,12 +1,5 @@
-def is_valid(s, min_length) -> bool:
-    return len(s) >= min_length
+from hashlib import sha1
 
-
-while True:
-    password = input("Enter your password: ")
-    if is_valid(password, 8):
-        print(f"You entered: {password}")
-        break
-    else:
-        print('Your password is too short. Please enter a password of '
-              'at least 8 characters.')
+password = bytes(input("Enter your password: "), 'utf-8')
+hashed_password = sha1(password).hexdigest()
+print(f'Your hashed password is: {hashed_password}')
