@@ -56,20 +56,12 @@ files:
       if __name__ == '__main__':
           StageTest4().run_tests()
     learner_created: false
+  - name: short_stage_3.py
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/35143#comment
-status: Failed
+status: Solved
 feedback:
-  message: |-
-    Wrong answer in test #2
-
-    The program did not display the API URL.
-
-    Please find below the output of your program during this failed test.
-    Note that the '>' character indicates the beginning of the input line.
-
-    ---
-
-    Enter your password: > mypassword123
-    Your hashed password is: 1cf4c502ddd89b918c4bfefea76dadd590693b48
-  time: "Thu, 12 Oct 2023 12:05:30 UTC"
+  message: Congratulations!
+  time: "Thu, 12 Oct 2023 13:06:51 UTC"
 record: 4

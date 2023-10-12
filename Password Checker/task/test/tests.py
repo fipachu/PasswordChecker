@@ -2,7 +2,7 @@ from hstest import CheckResult, StageTest, dynamic_test, TestedProgram
 import hashlib
 
 
-class StageTest3(StageTest):
+class StageTest4(StageTest):
 
     @dynamic_test
     def initial_prompt_test(self):
@@ -15,18 +15,22 @@ class StageTest3(StageTest):
     valid_pwds = ["mypassword123", "youcantguessme", "abcdefgh", "validpwd"]
 
     @dynamic_test(data=valid_pwds)
-    def hash_output_test(self, x):
+    def test_api_request(self, x):
         main = TestedProgram()
         main.start().lower()
+
         output = main.execute(x).lower().strip()
 
-        expected_hash = hashlib.sha1(x.encode()).hexdigest()
+        if "https://api.pwnedpasswords.com/range/" not in output:
+            return CheckResult.wrong("The program did not display the API URL.")
 
-        if expected_hash not in output:
-            return CheckResult.wrong("The program should output the hashed password. " +
-                                     "Expected: \"" + expected_hash + "\". Got: " + output)
+        # Check if the URL contains the first 5 characters of the hashed password
+        sha1_hash = hashlib.sha1(x.encode()).hexdigest().lower()
+        if sha1_hash[:5] not in output:
+            return CheckResult.wrong("The URL did not contain the correct first 5 characters of the hashed password.")
+
         return CheckResult.correct()
 
 
 if __name__ == '__main__':
-    StageTest3().run_tests()
+    StageTest4().run_tests()
