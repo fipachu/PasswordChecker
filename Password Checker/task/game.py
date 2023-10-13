@@ -2,10 +2,11 @@ import requests
 from hashlib import sha1
 
 
-def get_password() -> str:
-    while len(password := input('Enter your password: ')) < 8:
-        print('Your password is too short. Please enter a password of '
-              'at least 8 characters.')
+
+def get_password(min_length=8) -> str:
+    while len(password := input('Enter your password: ')) < min_length:
+        print('Your password is too short. Please enter a password of'
+              f' at least {min_length} characters.')
     return password
 
 

@@ -86,5 +86,8 @@ files:
       print('Your hashed password is:', hashlib.sha1(password.encode()).hexdigest())
     learner_created: true
 feedback_link: https://hyperskill.org/learn/step/35144#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: "Fri, 13 Oct 2023 20:19:16 UTC"
 record: 5
