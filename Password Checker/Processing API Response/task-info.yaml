@@ -76,18 +76,10 @@ files:
     learner_created: false
   - name: short_stage_3.py
     visible: true
-    text: |
-      # author: https://hyperskill.org/profile/1254124
-      # source: https://hyperskill.org/projects/381/stages/2271/implement#solutions-2532994
-      import hashlib
-      
-      while len(password := input('Enter your password: ')) < 8:
-          print('Your password is too short. Please enter a password of at least 8 characters.')
-      print('Your hashed password is:', hashlib.sha1(password.encode()).hexdigest())
     learner_created: true
 feedback_link: https://hyperskill.org/learn/step/35144#comment
 status: Solved
 feedback:
   message: Congratulations!
-  time: "Fri, 13 Oct 2023 20:19:16 UTC"
+  time: "Fri, 13 Oct 2023 20:51:35 UTC"
 record: 5

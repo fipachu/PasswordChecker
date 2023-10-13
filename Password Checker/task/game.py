@@ -49,6 +49,5 @@ def main():
     #           f' appears {n} times in data breaches.')
 
 
-# Necessary to let the unit test know to use game.py as entry point
 if __name__ == "__main__":
     main()
