@@ -1,4 +1,5 @@
 from hashlib import sha1
+import argparse
 
 import requests
 
@@ -16,13 +17,23 @@ def get_password(min_length=8) -> str | None:
 
 
 def main():
+    descr = ('Interactive program to check password safety against'
+             ' haveibeenpwnd.com API')
+    parser = argparse.ArgumentParser(description=descr)
+    parser.add_argument('-s', '--show-hash',
+                        help='show the full hashed password in the output',
+                        action='store_true')
+    args = parser.parse_args()
+
+    # Interactive CLI loop
     while True:
         # Try to get password, if user inputs exit, return from main
         if (password := get_password()) is None:
             return
         # hashlib.sha1.hexdigest() returns lowercase hex number
         hashed = sha1(password.encode('utf-8')).hexdigest()
-        print(f'Your hashed password is: {hashed}')
+        if args.show_hash:
+            print(f'Your hashed password is: {hashed}')
 
         prefix = hashed[:5]
         suffix = hashed[5:]
@@ -30,7 +41,7 @@ def main():
         headers = {'Add-Padding': 'true'}
 
         print('Checking...')
-        # TODO: check whether this line is accepted by unit test
+        # # This line is accepted by the test, but not necessary
         # print(f'A request was sent to "{url}" endpoint, awaiting response...')
         r = requests.get(url, headers=headers)
         r.raise_for_status()  # Raise exception if GET failed
@@ -47,15 +58,6 @@ def main():
                   f' appears {n} times in data breaches.')
         else:
             print("Good news! Your password hasn't been pwned.")
-
-        # # Alternatively, and, I think, less readably:
-        # try:
-        #     n = suffixes[suffix]
-        # except KeyError:
-        #     print("Good news! Your password hasn't been pwned.")
-        # else:
-        #     print(f'Your password has been pwned! The password "{password}"'
-        #           f' appears {n} times in data breaches.')
 
 
 if __name__ == "__main__":
