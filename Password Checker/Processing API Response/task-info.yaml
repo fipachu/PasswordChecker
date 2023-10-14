@@ -74,9 +74,6 @@ files:
       if __name__ == '__main__':
           StageTest5().run_tests()
     learner_created: false
-  - name: short_stage_3.py
-    visible: true
-    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/35144#comment
 status: Solved
 feedback:

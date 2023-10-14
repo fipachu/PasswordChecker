@@ -1,4 +1,4 @@
-from test.tests import StageTest5
+from test.tests import StageTest6
 
 if __name__ == '__main__':
-    StageTest5().run_tests()
+    StageTest6().run_tests()

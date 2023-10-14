@@ -1,17 +1,25 @@
 from hstest import CheckResult, StageTest, dynamic_test, TestedProgram
-import hashlib, requests
+import hashlib
+import requests
 
 
-class StageTest5(StageTest):
-    valid_pwds = ["mypassword123", "youcantguessme", "abcdefgh", "validpwd"]
+class StageTest6(StageTest):
+    valid_pwds = ["mypassword123", "youcantguessme"]
     pwned_pwds = ["12345678", "password", "mypassword"]
+    exit_cmd = ["exit"]
 
     @dynamic_test
-    def test_prompt_and_hash(self):
+    def test_continuous_prompt(self):
         main = TestedProgram()
         output = main.start().lower()
+
         if "enter your password" not in output:
-            return CheckResult.wrong("The program did not prompt for the password.")
+            return CheckResult.wrong("The program did not prompt for the password initially.")
+
+        output = main.execute("test_password").lower()
+        if "enter your password" not in output:
+            return CheckResult.wrong("The program did not prompt for the password again.")
+
         return CheckResult.correct()
 
     @dynamic_test(data=valid_pwds)
@@ -22,8 +30,9 @@ class StageTest5(StageTest):
 
         sha1_hash = hashlib.sha1(x.encode()).hexdigest().lower()
 
-        if sha1_hash not in output:
-            return CheckResult.wrong(f"The program should display the hashed password ({sha1_hash}).")
+        if sha1_hash in output:
+            return CheckResult.wrong(f"The program should NOT display the hashed password, " +
+                                     "if --show-hash was not given.")
 
         return CheckResult.correct()
 
@@ -49,6 +58,27 @@ class StageTest5(StageTest):
                 else:
                     return CheckResult.correct()
 
+    @dynamic_test(data=exit_cmd)
+    def test_exit_option(self, x):
+        main = TestedProgram()
+        main.start()
+        output = main.execute(x).lower()
+        if "goodbye" not in output:
+            return CheckResult.wrong("The program did not exit when the 'exit' command was entered.")
+        return CheckResult.correct()
+
+    @dynamic_test(data=valid_pwds)
+    def test_show_hash_argument(self, x):
+        main = TestedProgram()
+        main.start("--show-hash")
+        output = main.execute(x).lower()
+        sha1_hash = hashlib.sha1(x.encode()).hexdigest().lower()
+
+        if sha1_hash not in output:
+            return CheckResult.wrong("The hashed password should be displayed when --show-hash is used.")
+
+        return CheckResult.correct()
+
 
 if __name__ == '__main__':
-    StageTest5().run_tests()
+    StageTest6().run_tests()
