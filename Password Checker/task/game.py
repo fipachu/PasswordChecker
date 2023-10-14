@@ -3,16 +3,23 @@ from hashlib import sha1
 import requests
 
 
-def get_password(min_length=8) -> str:
-    while len(password := input('Enter your password: ')) < min_length:
-        print('Your password is too short. Please enter a password of'
-              f' at least {min_length} characters.')
-    return password
+def get_password(min_length=8) -> str | None:
+    while True:
+        password = input("Enter your password (or 'exit' to quit): ")
+        if password == 'exit':
+            return None
+        elif len(password) < min_length:
+            print('Your password is too short. Please enter a password of'
+                  f' at least {min_length} characters.')
+        else:
+            return password
 
 
 def main():
     while True:
-        password = get_password()
+        # Try to get password, if user inputs exit, return from main
+        if (password := get_password()) is None:
+            return
         # hashlib.sha1.hexdigest() returns lowercase hex number
         hashed = sha1(password.encode('utf-8')).hexdigest()
         print(f'Your hashed password is: {hashed}')
