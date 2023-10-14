@@ -105,18 +105,9 @@ files:
           StageTest6().run_tests()
     learner_created: false
 feedback_link: https://hyperskill.org/learn/step/35145#comment
-status: Failed
+status: Solved
 feedback:
-  message: |-
-    Wrong answer in test #7
-
-    The program did not exit when the 'exit' command was entered.
-
-    Please find below the output of your program during this failed test.
-    Note that the '>' character indicates the beginning of the input line.
-
-    ---
-
-    Enter your password (or 'exit' to quit): > exit
-  time: "Sat, 14 Oct 2023 14:31:27 UTC"
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Sat, 14 Oct 2023 15:49:38 UTC"
 record: 6

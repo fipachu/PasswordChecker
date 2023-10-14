@@ -29,6 +29,7 @@ def main():
     while True:
         # Try to get password, if user inputs exit, return from main
         if (password := get_password()) is None:
+            print('Goodbye!')
             return
         # hashlib.sha1.hexdigest() returns lowercase hex number
         hashed = sha1(password.encode('utf-8')).hexdigest()
